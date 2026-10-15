@@ -212,10 +212,10 @@ Paragraph; the rest open as in-app floating windows.
 | Window size and dock width remembered | done | UI-217-2 |
 | Command palette with recents | done | UI-217-7 |
 | Menu bar from the keyboard: Alt / F10 focus the bar, ← → ↓ ↩ drive it, Alt+letter opens a menu, underlined mnemonics run items | done | `menu_keys.rs`, #4988; macOS uses the native bar |
-| Every preference takes effect | partial | 46 of 149 do nothing (scorecard) |
-| UI scale presets | missing | UI-217-9, #2492 |
+| Every preference takes effect | partial | 26 of 166 preferences remain unimplemented and are hidden from Preferences until implemented (scorecard / `HIDDEN_UNTIL_IMPLEMENTED`) |
+| UI scale presets | done | UI-217-9, `prefs_ui.rs` display-scale presets |
 | History snapshots: camera button, snapshot rows (click returns and selects, rename, delete; the trash deletes the selected snapshot, and a snapshot or state dragged onto it, #5324), `history.*Snapshot` commands | partial | `history_cmds.rs`, `snapshot_rows` in `panels.rs`; New Snapshot dialog, first snapshot and History Options to come (#2966) |
-| Themes: Photoshop's four greys | partial | five themes; #2661 |
+| Themes: Photoshop's four greys | partial | Pro, Pro Medium, Pro Light Gray and Pro Light are available alongside Studio, Classic and other desktop palettes; #2661 |
 | Document tabs: overflow, context menu, reorder | done | UI-217-6; middle-click close #2570 |
 | Layers panel: wheel steps blend modes, drop on New/Trash | partial | UI-217-14 |
 | Layers panel filter-type dropdown (Kind, Name, Effect, Mode, Attribute, Color, Smart Object, Selected, Artboard) | partial | Kind, Name and Mode; the other six missing. `layer_filter_ui.rs`, `ui.set {layerFilter}` (#5048) |
