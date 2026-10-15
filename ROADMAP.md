@@ -135,6 +135,7 @@ Detail and the next releases: [docs/roadmap.md](docs/roadmap.md).
 
 | Date | Change | Summary |
 |---|---|---|
+| 2026-10-16 | minor | Reconciled menu/tool counts with current source; documented current PSD corpus floors and clarified that 953 open issues is the 2026-10-13 snapshot |
 | 2026-10-13 | minor | Focus item 1 quoted the oracle floor as 133 of 256; it is 145 of 258 (`crates/io/tests/corpus.rs`, gaps.md G1). Open issues 579 → 953 (2026-10-13) |
 | 2026-10-11 | minor | Toolbox count 56 of 68 (12 missing) with the Convert Point tool (#3204) |
 | 2026-10-10 | minor | Readiness by audience with hours per tier |
