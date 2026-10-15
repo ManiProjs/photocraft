@@ -215,8 +215,11 @@ what an agent can't finish alone.
 - **Missing:** 22 of 25 budgeted scenarios are over budget (baseline 2026-10-05, a heavily
   loaded machine): layer move with styles 321 ms p50 against 25 ms, opacity change 276 ms
   against 20 ms, paste 12 MP 1.2 s against 100 ms, layer move on 15000×10000 16-bit 2.7 s,
-  Content-Aware Scale 24 MP 954 s against 3 s, Select Subject 559 ms against 100 ms; the
-  150-layer nudge crashes the GPU compositor (P12); menus slow with thousands of layers (#2460); old machines lag (#2687).
+  Content-Aware Scale 24 MP 954 s against 3 s, Select Subject 559 ms against 100 ms. The
+  committed baseline still records the old P12 GPU validation failure; the compositor now bounds
+  outstanding operations (`FLUSH_OPS`) and has a 700-layer one-chunk regression test, but that fix
+  still needs a fresh reference-machine benchmark run. Menus slow with thousands of layers (#2460);
+  old machines lag (#2687).
 - **Estimate:** 200–350 h. Serial in places (compositor architecture).
 
 ## File-format gaps
