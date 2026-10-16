@@ -1,6 +1,6 @@
 # Where PhotoCraft falls short of Photoshop
 
-> **Last reviewed:** 2026-10-16 · **Last updated:** 2026-10-16 · **Change:** minor (G2 clarified: P12's old benchmark failure remains in the baseline, while the compositor has a bounded-submission guard and 700-layer regression test) · **Target:** Adobe Photoshop 2026
+> **Last reviewed:** 2026-10-16 · **Last updated:** 2026-10-16 · **Change:** minor (G2 clarified: P12 benchmark failure is stale pending rerun; G3 issue count refreshed to the 953-item snapshot; G6 now reflects one remaining missing tool) · **Target:** Adobe Photoshop 2026
 
 Every known shortfall against Photoshop 2026 (27.11.0), one entry each, ranked by user impact
 on the way to beta. This is the work list agents pick from: take the highest-ranked entry that
@@ -24,7 +24,7 @@ what an agent can't finish alone.
 | G3 | User-reported bug backlog | stability, UI | blocks beta | 250–400 h | [target-app-parity](target-app-parity.md) |
 | G4 | Brush feel | UI / painting | high | 100–180 h | [brush-parity](brush-parity.md) |
 | G5 | Transform, handles and modifiers | UI | high | 60–110 h | [ui-parity](ui-parity.md) |
-| G6 | Missing tools (12) | features | high | 60–100 h | [ui-parity](ui-parity.md#tools) |
+| G6 | Missing tool (1) | features | high | 2–9 h | [ui-parity](ui-parity.md#tools) |
 | G7 | Workspaces shown as parameter dialogs | features | high | 80–140 h | [target-app-parity](target-app-parity.md#feature-areas) |
 | G8 | Type depth | features | high | 120–200 h | [target-app-parity](target-app-parity.md#feature-areas) |
 | G9 | Panels, preferences and workspace | UI | medium-high | 150–250 h | [ui-parity](ui-parity.md#panels-and-workspace) |
@@ -61,7 +61,7 @@ what an agent can't finish alone.
 - **Evidence:** `Tool` enum (`crates/ui-egui/src/state.rs`) against the 67 `<tool>` entries of
   Photoshop's `Default Keyboard Shortcuts.kys` plus Remove, Triangle and Curvature Pen.
 - **Impact:** users look for them by name and shortcut; several are daily tools for designers.
-- **Estimate:** 60–100 h (2–9 h each, per the calibration).
+- **Estimate:** 2–9 h for the remaining Art History Brush (per the calibration).
 
 ### G7. Workspaces shown as parameter dialogs
 - **Missing:** Select and Mask workspace layout
@@ -152,11 +152,12 @@ what an agent can't finish alone.
 ## UI / UX gaps
 
 ### G3. User-reported bug backlog
-- **Missing:** fixes for 579 open issues (2026-10-10), filed mostly by 0.5/0.6 users. By title:
+- **Missing:** fixes for 953 open issues (2026-10-13 snapshot), filed mostly by 0.5/0.6 users. The
+  latest categorized snapshot is older (579 open issues, 2026-10-10). By title:
   ~150 UI/panels/menus/shortcuts, 94 file/format, 87 layers, 54 painting, 54 selection,
   46 type, 41 performance, 34 transform/move, 25 Linux/Wayland, 24 Windows, 20 macOS.
 - **Impact:** each is a place where a Photoshop user hits something different from what they
-  expect; together they are why ready-for-real-work is ~45% while breadth is ~76%.
+  expect; together they are why ready-for-real-work is ~45% while breadth is ~79%.
 - **Estimate:** 250–400 h (many overlap with other gaps; count each fix once).
 
 ### G4. Brush feel
@@ -273,7 +274,7 @@ what an agent can't finish alone.
 
 | Date | Change | Summary |
 |---|---|---|
-| 2026-10-16 | minor | G2: documented the P12 submission guard and regression test; baseline still requires a fresh reference-machine run |
+| 2026-10-16 | minor | G2: documented the P12 submission guard and regression test; baseline still requires a fresh reference-machine run. G6: refreshed the remaining-tool count and estimate to one tool, 2–9 h |
 | 2026-10-14 | minor | G1: a PSD smart object's filter mask shows when the file opens (Photoshop stores the filtered pixels unmasked); export stores them that way too; Photoshop-oracle floor 185 → 188 of 258 |
 | 2026-10-13 | minor | G14: D90 image area measured (4288 × 2848 at (10, 10)); gap remains open |
 | 2026-10-14 | minor | Corpus floors raised to the measured results of the CMYK, Lab, 32-bit, Levels, Threshold, Posterize, feather and pass-through fixes landed together: Photoshop-authored 165 → 185 of 258, io 146 → 148 of 170, psd-tools 242 → 249 of 309 |

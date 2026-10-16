@@ -1,6 +1,6 @@
 # PhotoCraft vs Adobe Photoshop: target-app parity
 
-> **Last reviewed:** 2026-10-16 · **Last updated:** 2026-10-16 · **Change:** minor (current UI and corpus metrics refreshed; on-canvas corner radius widgets, TOOL-214-12; `.atn` import maps 112 events; Free Transform H/V skew fields; stale rows corrected against `main` and the scorecard, estimates unchanged; Photoshop Actions `.atn` load and save; 2026-10-10: Tilt-Shift measurements added; earlier the same day: major, full re-measure against Photoshop 2026 27.11.0; merged `parity-estimate.md` and the roadmap's honest assessment; stale missing-tool rows corrected: Color Replacement and Red Eye are live toolbar tools, Frame landed; percentages unchanged) · **Target:** Adobe Photoshop 2026
+> **Last reviewed:** 2026-10-16 · **Last updated:** 2026-10-16 · **Change:** minor (current menu/tool/UI and corpus metrics refreshed; on-canvas corner radius widgets, TOOL-214-12; `.atn` import maps 112 events; Free Transform H/V skew fields; stale rows corrected against `main` and the scorecard, estimates unchanged; Photoshop Actions `.atn` load and save; 2026-10-10: Tilt-Shift measurements added; earlier the same day: major, full re-measure against Photoshop 2026 27.11.0; merged `parity-estimate.md` and the roadmap's honest assessment; stale missing-tool rows corrected: Color Replacement and Red Eye are live toolbar tools, Frame landed; percentages unchanged) · **Target:** Adobe Photoshop 2026
 
 The authoritative answer to "how close is PhotoCraft to Photoshop, and how much work is left". The
 one-page summary is [`ROADMAP.md`](../ROADMAP.md); the ranked work list is [`gaps.md`](gaps.md);
@@ -14,7 +14,7 @@ the measured checklists are [`scorecard.md`](scorecard.md) (`cargo xtask scoreca
 
 | Number | Value | Kind |
 |---|---|---|
-| **Feature breadth** (does each Photoshop feature exist?) | **~76%** | partly measured (menus, tools, panels, formats), weights below |
+| **Feature breadth** (does each Photoshop feature exist?) | **~79%** | partly measured (menus, tools, panels, formats), weights below |
 | **Ready for real work** (could a professional replace Photoshop with it?) | **~45%** (range 40–50%) | estimated, weights and evidence below |
 | **Mainstream practitioner** (typical pro, weekly areas only) | **~43%** (38–48%) | estimated, [method](#mainstream-practitioner-43) |
 | **Essentials user** (core features only) | **~61%** (55–67%) | estimated, [method](#essentials-user-61) |
@@ -56,18 +56,18 @@ architecture and the PSD writer are the serial parts.
 - User reports on GitHub (`storytold/photocraft`, 579 open issues on 2026-10-10) as evidence of
   depth and feel. Adobe's documentation and release notes for behaviour not visible in the bundle.
 
-## Feature breadth: ~76% (weighted)
+## Feature breadth: ~79% (weighted)
 
 | Component | Weight | Ours / Photoshop | % | Kind |
 |---|---:|---|---:|---|
 | Menu commands | 30% | 631 / 631 catalog items dispatch a live command (628 / 628 on 2026-10-10) | 100% | measured (`cargo xtask parity`) |
-| Toolbox tools | 15% | 59 / 68 (Photoshop's 67 `.kys` tools plus Remove, Triangle, Curvature Pen; minus legacy Rounded Rectangle and Targeted Adjustment) | 87% | measured (`Tool` enum in `ui-egui/src/state.rs`, `TOOL_SECTIONS` in `panels.rs`) |
+| Toolbox tools | 15% | 67 / 68 (Photoshop's 67 `.kys` tools plus Remove, Triangle, Curvature Pen; minus legacy Rounded Rectangle and Targeted Adjustment) | 99% | measured (`Tool` enum in `ui-egui/src/state.rs`, `TOOL_SECTIONS` in `panels.rs`); only Art History Brush is absent |
 | Panels | 10% | 30 / 35 Window-menu panels | 86% | measured (`view_cmds.rs`, panel modules) |
 | Filters and adjustments | 10% | every Filter and Image › Adjustments item live; Filter Gallery 47 looks | 100% | measured (menu catalog) |
 | File formats (usage-weighted) | 15% | 13 of 31 Photoshop formats supported in Photoshop's directions, 4 partial; the common ones (PSD/PSB, TIFF, JPEG, PNG, WebP) all present | ~80% (48% by count) | measured list, estimated weights ([file-format-parity.md](file-format-parity.md)) |
 | AI / generative | 10% | classical Select Subject/Sky, Remove tool, Content-Aware; no Generative Fill/Expand, Neural Filters, Sky Replacement, Super Zoom | ~15% | estimated |
 | Ecosystem (plug-ins, scripting, libraries) | 10% | WebAssembly plug-ins, CLI, MCP, actions, `.atn` load/save (112 events); no .8BF, UXP/ExtendScript, Libraries | ~20% | estimated |
-| **Weighted** | 100% | | **~76%** | |
+| **Weighted** | 100% | | **~79%** | |
 
 ## Ready for real work: ~45% (weighted)
 
@@ -75,7 +75,7 @@ Weights reflect what a working Photoshop user depends on (photographers, retouch
 
 | Dimension | Weight | % ready | Remaining (agent-h) | Evidence | Detail |
 |---|---:|---:|---:|---|---|
-| Features in depth (tools, layers, selections, type, filters, transforms) | 25% | 55% | 600–1,000 | Current scorecard: Tools 33 done / 11 partial / 0 missing checklist rows, Type 4 / 3 / 2, Automation 5 / 2 / 4. Nine Photoshop tools remain absent; Select and Mask, Vanishing Point and Content-Aware Fill are parameter dialogs, not workspaces; type on a path and RTL paragraph controls remain missing | [gaps.md](gaps.md) |
+| Features in depth (tools, layers, selections, type, filters, transforms) | 25% | 55% | 600–1,000 | Current scorecard: Tools 33 done / 11 partial / 0 missing checklist rows, Type 4 / 3 / 2, Automation 5 / 2 / 4. Only Art History Brush remains absent; Select and Mask, Vanishing Point and Content-Aware Fill are parameter dialogs, not workspaces; type on a path and RTL paragraph controls remain missing | [gaps.md](gaps.md) |
 | UI / UX fidelity and feel | 15% | 40% | 350–600 | ~150 open UI issues; Workspace checklist 14 / 5 / 4 (current scorecard after theme-knob fix); 26 of 166 preferences remain unimplemented and hidden from Preferences; no floating panel groups, limited Color panel modes, brush lag and pressure jumps reported | [ui-parity.md](ui-parity.md), [brush-parity.md](brush-parity.md) |
 | File formats and fidelity | 15% | 60% | 300–500 | PSD oracle on Photoshop-authored files 188/258 (73%); io corpus 148/170 (87%); psd-tools 249/309 (81%); round trips ~100% of corpus; but users report Photoshop refusing our files (#1281, #2469; a text-layer case, #2374, was fixed 2026-10-10); no Photoshop PDF, EPS, JPEG 2000, JPEG XL, AVIF read, CR3 | [file-format-parity.md](file-format-parity.md) |
 | Performance | 10% | 25% | 200–350 | 3 of 25 budgeted scenarios meet budget (baseline 2026-10-05); P12's GPU flush guard and 700-layer regression test are now present, but the committed benchmark baseline still records the earlier failure; layer move on 15000×10000 16-bit 2.7 s p50; users report brush and cursor lag (#2619, #2566, #1994) | [scorecard.md](scorecard.md#performance) |
@@ -214,7 +214,7 @@ than the work already done.
 
 | Milestone | Scope | Opus 5.5 agent-hours |
 |---|---|---:|
-| **Beta** (~75% ready, PSD reliable) | PSD fidelity and Photoshop re-open check, the performance budgets, the user bug backlog, the 15 missing tools, Select and Mask / Content-Aware Fill workspaces, type depth, UI feel (brush, transform, panels), JPEG/PDF/AVIF/JXL formats, Hindi/Arabic/Vietnamese and RTL | **1,100–1,800** |
+| **Beta** (~75% ready, PSD reliable) | PSD fidelity and Photoshop re-open check, the performance budgets, the user bug backlog, the one missing tool, Select and Mask / Content-Aware Fill workspaces, type depth, UI feel (brush, transform, panels), JPEG/PDF/AVIF/JXL formats, Hindi/Arabic/Vietnamese and RTL | **1,100–1,800** |
 | **Full parity** | the above plus the AI tier, plug-in/scripting ecosystem, video depth, long-tail fidelity | **2,300–4,100** |
 
 **Parallelism.** About 80% parallelizes: areas are independent crates and command modules, and
@@ -565,7 +565,7 @@ See [method, raw measurements and reproduction](five-algorithm-performance.md).
 
 | Date | Change | Summary |
 |---|---|---|
-| 2026-10-16 | minor | Refreshed current workspace checklist and PSD corpus evidence; clarified that P12 benchmark status is stale pending a reference-machine rerun |
+| 2026-10-16 | minor | Refreshed current tool count (67/68), workspace checklist and PSD corpus evidence; clarified that P12 benchmark status is stale pending a reference-machine rerun |
 | 2026-10-13 | minor | Vector shapes: on-canvas corner radius widgets on live rectangles (TOOL-214-12); estimates unchanged |
 | 2026-10-13 | minor | Stale "missing tool" rows corrected against main: Color Replacement (`paint.colorReplacement`), Red Eye (`paint.redEye`) and Add/Delete Anchor Point (the Pen flyout) are live toolbar tools and Frame landed, so Art History Brush is the only tool still missing; percentages unchanged |
 | 2026-10-12 | minor | Free Transform options bar H/V skew fields; percentages unchanged |

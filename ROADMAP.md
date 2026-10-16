@@ -19,7 +19,7 @@ About 80% of the work parallelizes.
 
 | | Value | Kind |
 |---|---|---|
-| **Feature breadth** | **~76%** | partly measured: menus 631/631, tools 59/68, panels 30/35, formats 13+4 of 31 |
+| **Feature breadth** | **~79%** | partly measured: menus 631/631, tools 67/68, panels 30/35, formats 13+4 of 31 |
 | **Ready for real work** | **~45%** (40–50%) | estimated: weighted by dimension below |
 | Mainstream practitioner | ~43% (38–48%) | estimated: weekly areas of a typical pro, with discounts ([method](docs/target-app-parity.md#mainstream-practitioner-43)) |
 | Essentials user | ~61% (55–67%) | estimated: core features only ([method](docs/target-app-parity.md#essentials-user-61)) |
@@ -110,11 +110,11 @@ Also shipped: Traditional Chinese, Russian, Ukrainian, Czech, Polish, Greek, Dut
 
 | Rank | Milestone | Estimate |
 |---|---|---:|
-| 1 | PSD that Photoshop trusts: Save As corruption, Photoshop re-open check, Photoshop-oracle floor 145 → 200+ of 258 | 150–250 h |
-| 2 | Performance budgets: the 22 over-budget scenarios and the 150-layer GPU crash | 200–350 h |
+| 1 | PSD that Photoshop trusts: Save As corruption, Photoshop re-open check, Photoshop-oracle floor 188 → 200+ of 258 | 150–250 h |
+| 2 | Performance budgets: the 22 over-budget scenarios and reference-machine rerun of the P12 GPU submission-bound fix | 200–350 h |
 | 3 | User bug backlog to under 100 open | 250–400 h |
 | 4 | Brush and transform feel (brush-parity, ui-parity rows) | 160–290 h |
-| 5 | The 12 missing tools | 60–100 h |
+| 5 | The one missing Photoshop tool (Art History Brush) | 2–9 h |
 
 Detail and the next releases: [docs/roadmap.md](docs/roadmap.md).
 
