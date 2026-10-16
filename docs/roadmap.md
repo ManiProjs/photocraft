@@ -118,7 +118,7 @@ Each milestone has a **definition of done (DoD)** and must leave `main` green on
 
 | Date | Change | Summary |
 |---|---|---|
-| 2026-10-16 | minor | Refreshed current menu/tool/corpus metrics and clarified the P12 benchmark baseline still needs a reference-machine rerun |
+| 2026-10-16 | minor | Refreshed menu/tool/corpus metrics; the 700-layer GPU regression passes locally, but P12 benchmark baseline still needs a reference-machine rerun |
 | 2026-10-11 | minor | Linked adaptive Unsharp Mask performance and quality evidence; milestones, alpha gate and estimates unchanged |
 | 2026-10-10 | minor | Photomerge is implemented; real-world quality validation remains open |
 | 2026-10-10 | minor | Alpha gate table (core-workflow gate from the progress-docs standard): passes, stage stays alpha |

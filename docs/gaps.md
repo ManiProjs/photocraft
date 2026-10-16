@@ -219,8 +219,8 @@ what an agent can't finish alone.
   against 20 ms, paste 12 MP 1.2 s against 100 ms, layer move on 15000×10000 16-bit 2.7 s,
   Content-Aware Scale 24 MP 954 s against 3 s, Select Subject 559 ms against 100 ms. The
   committed baseline still records the old P12 GPU validation failure; the compositor now bounds
-  outstanding operations (`FLUSH_OPS`) and has a 700-layer one-chunk regression test, but that fix
-  still needs a fresh reference-machine benchmark run. Menus slow with thousands of layers (#2460);
+  outstanding operations (`FLUSH_OPS`) and its 700-layer one-chunk regression passes locally, but
+  the performance baseline still needs a fresh reference-machine benchmark run. Menus slow with thousands of layers (#2460);
   old machines lag (#2687).
 - **Estimate:** 200–350 h. Serial in places (compositor architecture).
 
@@ -275,7 +275,7 @@ what an agent can't finish alone.
 
 | Date | Change | Summary |
 |---|---|---|
-| 2026-10-16 | minor | G2: documented the P12 submission guard and regression test; baseline still requires a fresh reference-machine run. G6: refreshed the remaining-tool count and estimate to one tool, 2–9 h |
+| 2026-10-16 | minor | G2: the 700-layer single-chunk GPU regression passes locally; baseline still requires a fresh reference-machine run. G6: refreshed the remaining-tool count and estimate to one tool, 2–9 h |
 | 2026-10-14 | minor | G1: a PSD smart object's filter mask shows when the file opens (Photoshop stores the filtered pixels unmasked); export stores them that way too; Photoshop-oracle floor 185 → 188 of 258 |
 | 2026-10-13 | minor | G14: D90 image area measured (4288 × 2848 at (10, 10)); gap remains open |
 | 2026-10-14 | minor | Corpus floors raised to the measured results of the CMYK, Lab, 32-bit, Levels, Threshold, Posterize, feather and pass-through fixes landed together: Photoshop-authored 165 → 185 of 258, io 146 → 148 of 170, psd-tools 242 → 249 of 309 |
