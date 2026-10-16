@@ -200,8 +200,8 @@ what an agent can't finish alone.
   with saved bindings, matching toolbar hints and regression coverage (`ui-egui/src/tool_shortcuts.rs`).
 - **Missing:** 26 of 166 preferences do nothing (hidden until implemented; scorecard prefs audit);
   in-app floating panel groups persist with workspaces, but cannot tear off into OS windows
-  (UI-217-5, #1828, #1213, #2305); Color panel lacks a circular wheel and inline alternate colour
-  models (UI-217-17, #2569); layer clipboard
+  (UI-217-5, #1828, #1213, #2305); Color panel lacks a circular wheel and inline CMYK/Lab/Gray/Web
+  controls (UI-217-17, #2569); layer clipboard
   (UI-217-23, #2670); tool-specific context menus beyond brushes, selections and Pen
   ([context-menu-parity.md](context-menu-parity.md)); Libraries, Comments, Contextual Task Bar
   panels.

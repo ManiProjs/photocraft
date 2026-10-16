@@ -120,9 +120,9 @@ note = "saturation_track/lightness_track (adjust_editors.rs): grey -> the hue an
 [[item]]
 id = "UI-217-17"
 target = "Color panel: wheel plus RGB/HSB/CMYK/Lab/Gray/Web slider modes; resizes with its group"
-status = "missing"
+status = "partial"
 issue = 217
-note = "panels.rs:1837 single field + hex/RGB readout"
+note = "panels.rs: color field/hue strip, hex readout, and inline RGB/HSB numeric selector are implemented and resize with the group; circular wheel and inline CMYK/Lab/Gray/Web modes remain missing (the Color Picker dialog supports these models)."
 
 [[item]]
 id = "UI-217-18"
