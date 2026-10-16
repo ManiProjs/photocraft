@@ -198,9 +198,10 @@ what an agent can't finish alone.
 ### G9. Panels, preferences and workspace
 - **Progress (2026-10-12):** toolbar tool shortcuts can be reassigned, removed and reset (#4086),
   with saved bindings, matching toolbar hints and regression coverage (`ui-egui/src/tool_shortcuts.rs`).
-- **Missing:** 27 of 156 preferences do nothing (scorecard prefs audit); panel groups can't
-  float or tear off into OS windows (UI-217-5, #1828, #1213, #2305); Color panel lacks wheel and
-  slider modes (UI-217-17, #2569); more themes (UI-217-11, #2661); layer clipboard
+- **Missing:** 26 of 166 preferences do nothing (hidden until implemented; scorecard prefs audit);
+  in-app floating panel groups persist with workspaces, but cannot tear off into OS windows
+  (UI-217-5, #1828, #1213, #2305); Color panel lacks a circular wheel and inline alternate colour
+  models (UI-217-17, #2569); layer clipboard
   (UI-217-23, #2670); tool-specific context menus beyond brushes, selections and Pen
   ([context-menu-parity.md](context-menu-parity.md)); Libraries, Comments, Contextual Task Bar
   panels.

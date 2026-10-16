@@ -205,10 +205,10 @@ Paragraph; the rest open as in-app floating windows.
 
 | Behaviour | Status | Evidence |
 |---|---|---|
-| Panel groups float and tear off into OS windows | missing | UI-217-5, #1828, #1213 |
+| Panel groups float and tear off into OS windows | partial | UI-217-5, #1828, #1213 — in-app floating groups, drag-out/redock and workspace persistence are implemented; tear-off into separate OS windows remains missing |
 | Drag panels to reorder and regroup | partial | #2272, #2305 |
 | Docked resize pushes the neighbour | partial | #2573 |
-| Color panel wheel and RGB/HSB/CMYK/Lab sliders | missing | UI-217-17, #2569 |
+| Color panel wheel and RGB/HSB/CMYK/Lab controls | partial | UI-217-17, #2569 — saturation/brightness field, hue strip, hex/RGB readouts and HSB sliders on Studio themes exist; circular wheel, inline model selector, and inline CMYK/Lab controls remain missing (the Color Picker dialog supports all models) |
 | Window size and dock width remembered | done | UI-217-2 |
 | Command palette with recents | done | UI-217-7 |
 | Menu bar from the keyboard: Alt / F10 focus the bar, ← → ↓ ↩ drive it, Alt+letter opens a menu, underlined mnemonics run items | done | `menu_keys.rs`, #4988; macOS uses the native bar |
