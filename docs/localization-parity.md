@@ -1,6 +1,6 @@
 # Localization parity
 
-> **Last reviewed:** 2026-10-16 · **Last updated:** 2026-10-16 · **Change:** minor (dialog action rows now follow RTL reading-end alignment; panel interiors and bidi remain open) · **Target:** Adobe Photoshop 2026
+> **Last reviewed:** 2026-10-16 · **Last updated:** 2026-10-16 · **Change:** minor (dialog/crop action rows and double-width toolbar controls follow RTL reading order; panel interiors and bidi remain open) · **Target:** Adobe Photoshop 2026
 
 Per-language status of PhotoCraft's UI. How catalogs work and how to add one:
 [`localization.md`](localization.md). Language notes: [Korean](localization-ko.md), [Spanish](localization-es.md),
@@ -79,7 +79,7 @@ engine localization or native review is complete.
 
 | Date | Change | Summary |
 |---|---|---|
-| 2026-10-16 | minor | Generic dialog action rows align to the reading-end side in RTL; full dialog mirroring and bidi remain open |
+| 2026-10-16 | minor | Dialog and crop action rows align to the reading-end side, and the double-width toolbar row follows reading order in RTL; full panel/dialog mirroring and bidi remain open |
 | 2026-10-10 | major | First version, measured from the catalogs with the `i18n-coverage` rules |
 | 2026-10-10 | minor | Right-to-left shell layout (menu bar, title, options and status bars, toolbox and dock sides) |
 | 2026-10-11 | minor | Czech dynamic status/notice and hardware text, render labels and Navigator zoom context; engine messages remain English |
