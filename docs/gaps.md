@@ -1,6 +1,6 @@
 # Where PhotoCraft falls short of Photoshop
 
-> **Last reviewed:** 2026-10-16 · **Last updated:** 2026-10-16 · **Change:** minor (G2 clarified: P12 benchmark failure is stale pending rerun; G3 issue count refreshed to the 953-item snapshot; G6 now reflects one remaining missing tool) · **Target:** Adobe Photoshop 2026
+> **Last reviewed:** 2026-10-16 · **Last updated:** 2026-10-18 · **Change:** minor (G2 clarified: P12 benchmark failure is stale pending rerun; G3 issue count refreshed to the 953-item snapshot; G6 now reflects one remaining missing tool; G9: fill and adjustment layers copy and paste whole, #2344; G1: smart filter masks show on PSD open, Photoshop-oracle floor 188/258; G10: DPX read and write, #1049, Cineon read; CMYK/Lab/32-bit adjustment, mask feather, Threshold, Posterize and Gradient Map parity updates; G7: Field Blur pins; G4: Hue Jitter and minimum field interaction remain partial; G5: Free Transform skew fields and spring-loaded tools; G11: `.atn` event coverage and Actions load/save) · **Target:** Adobe Photoshop 2026
 
 Every known shortfall against Photoshop 2026 (27.11.0), one entry each, ranked by user impact
 on the way to beta. This is the work list agents pick from: take the highest-ranked entry that
@@ -201,8 +201,9 @@ what an agent can't finish alone.
 - **Missing:** 26 of 166 preferences do nothing (hidden until implemented; scorecard prefs audit);
   in-app floating panel groups persist with workspaces, but cannot tear off into OS windows
   (UI-217-5, #1828, #1213, #2305); Color panel lacks a circular wheel and inline CMYK/Lab/Gray/Web
-  controls (UI-217-17, #2569); layer clipboard
-  (UI-217-23, #2670); tool-specific context menus beyond brushes, selections and Pen
+  controls (UI-217-17, #2569); more themes (UI-217-11, #2661); a single pixel layer still copies
+  without its mask and styles (UI-217-23, #2670), while fill and adjustment layers copy whole (#2344);
+  tool-specific context menus beyond brushes, selections and Pen
   ([context-menu-parity.md](context-menu-parity.md)); Libraries, Comments, Contextual Task Bar
   panels.
 - **Estimate:** 150–250 h.
@@ -276,6 +277,7 @@ what an agent can't finish alone.
 | Date | Change | Summary |
 |---|---|---|
 | 2026-10-16 | minor | G2: the 700-layer single-chunk GPU regression passes locally; baseline still requires a fresh reference-machine run. G6: refreshed the remaining-tool count and estimate to one tool, 2–9 h |
+| 2026-10-18 | minor | G9: with no selection, Copy takes fill and adjustment layers whole and Paste recreates them (#2344); UI-217-23 stays partial (a single pixel layer copies its pixels only); estimate unchanged |
 | 2026-10-14 | minor | G1: a PSD smart object's filter mask shows when the file opens (Photoshop stores the filtered pixels unmasked); export stores them that way too; Photoshop-oracle floor 185 → 188 of 258 |
 | 2026-10-13 | minor | G14: D90 image area measured (4288 × 2848 at (10, 10)); gap remains open |
 | 2026-10-14 | minor | Corpus floors raised to the measured results of the CMYK, Lab, 32-bit, Levels, Threshold, Posterize, feather and pass-through fixes landed together: Photoshop-authored 165 → 185 of 258, io 146 → 148 of 170, psd-tools 242 → 249 of 309 |
